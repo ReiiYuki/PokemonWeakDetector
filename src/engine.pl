@@ -1,7 +1,8 @@
 :- use_module(pokefact,[]).
 :- use_module(movefact,[]).
 :- use_module(typefact,[]).
-% 
+:- use_module(statfact,[]).
+%
 % effective_ratio_defense(_, [], 1.0).
 % effective_ratio_defense(Attack, [Defense | Tail], Result) :-
 %     not(Defense = Tail),
@@ -17,5 +18,6 @@ beat(P,M,E):-pokefact:pokemon(P),pokefact:have_move(P,M),
   pokefact:have_type(E,T1),
   typefact:effective(T,T1,R),R>=2.
 
+stronger(A,B):-statfact:have_base_stat(A,Stat1),statfact:have_base_stat(B,Stat2),Stat1>=Stat2.
 
 % movefact:have_type(dragon-tail,T),pokefact:have_type(abra,T1),effective(T,T1,R),R>=2.
