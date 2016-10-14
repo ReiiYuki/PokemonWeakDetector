@@ -1,3 +1,4 @@
+[
 {"pp": "35", "power": "40", "accuracy": "100", "id": 1, "move_name": "pound", "priority": "0", "type": "normal"},
 {"pp": "25", "power": "50", "accuracy": "100", "id": 2, "move_name": "karate-chop", "priority": "0", "type": "fighting"},
 {"pp": "10", "power": "15", "accuracy": "85", "id": 3, "move_name": "double-slap", "priority": "0", "type": "normal"},
@@ -637,3 +638,4 @@
 {"pp": "", "power": "", "accuracy": "90", "id": 10016, "move_name": "shadow-panic", "priority": "0", "type": "shadow"},
 {"pp": "", "power": "", "accuracy": "", "id": 10017, "move_name": "shadow-shed", "priority": "0", "type": "shadow"},
 {"pp": "", "power": "", "accuracy": "", "id": 10018, "move_name": "shadow-sky", "priority": "0", "type": "shadow"},
+]
