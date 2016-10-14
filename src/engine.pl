@@ -2,6 +2,9 @@
 :- use_module(movefact,[]).
 :- use_module(typefact,[]).
 :- use_module(statfact,[]).
+=======
+:- use_module(library(http/http_open)).
+:- use_module(library(http/json)).
 %
 % effective_ratio_defense(_, [], 1.0).
 % effective_ratio_defense(Attack, [Defense | Tail], Result) :-
@@ -20,4 +23,10 @@ beat(P,M,E):-pokefact:pokemon(P),pokefact:have_move(P,M),
 
 stronger(A,B):-statfact:have_base_stat(A,Stat1),statfact:have_base_stat(B,Stat2),Stat1>=Stat2.
 
+
+
 % movefact:have_type(dragon-tail,T),pokefact:have_type(abra,T1),effective(T,T1,R),R>=2.
+% pokefact:pokemon(pikachu),
+%  pokefact:have_move(pikachu,ME),
+%  movefact:have_type(ME,TE),
+%  typefact:effective(TE,water,R),R=<1.

@@ -2,26 +2,21 @@
   <div id="app">
     <img src="./assets/logo.png">
     <h1>{{ msg }}</h1>
-    <select v-model="selected">
-      <option v-for="option in options" v-bind:value="option.value">
-       {{ option.text }}
-     </option>
-    </select>
-    <span>Selected: {{ selected }}</span>
+    <Enemy></Enemy>
   </div>
 </template>
 
 <script>
+
+import Enemy from './components/Enemy.vue'
+
 export default {
+  components:{
+    Enemy: Enemy
+  },
   data () {
     return {
-      msg: 'Hello Vue!',
-      selected: 'A',
-      options: [
-        { text: 'One', value: 'A' },
-        { text: 'Two', value: 'B' },
-        { text: 'Three', value: 'C' }
-      ]
+      msg: 'Enemy Pokemon'
     }
   }
 }
