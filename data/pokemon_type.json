@@ -1,3 +1,4 @@
+[
 {
     "name": "Normal",
     "id": 1,
@@ -959,10 +960,7 @@
         }
     ],
     "no_effect": [
-        {
-            "name": "dragon",
-            "resource_uri": "/api/v1/type/16/"
-        }
+    
     ],
     "resource_uri": "/api/v1/type/18/",
     "weakness": [
@@ -977,5 +975,5 @@
     ],
     "resistance": []
 }
-,
+
 ]
