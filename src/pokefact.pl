@@ -1,3 +1,4 @@
+:- module(pkfact, []).
 pokemon(bulbasaur).
 pokemon(ivysaur).
 pokemon(venusaur).
