@@ -1,3 +1,4 @@
+:- module(pkfact, []).
 pokemon(bulbasaur).
 pokemon(ivysaur).
 pokemon(venusaur).
@@ -45569,10 +45570,4 @@ have(genesect,blizzard).
 have(genesect,ice-beam).
 have(genesect,flamethrower).
 have(genesect,fly).
-<<<<<<< HEAD
-=======
-
-
-
-two(X,Y,Z) :- type(X,Y),type(X,Z),Z!=Y.
->>>>>>> master
+what_is_it(X,Y,Z) :- have(X,Y),type(X,Z).
