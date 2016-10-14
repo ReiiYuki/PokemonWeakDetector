@@ -45569,3 +45569,7 @@ have(genesect,blizzard).
 have(genesect,ice-beam).
 have(genesect,flamethrower).
 have(genesect,fly).
+
+
+
+two(X,Y,Z) :- type(X,Y),type(X,Z),Z!=Y.

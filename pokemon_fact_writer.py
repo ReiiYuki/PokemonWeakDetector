@@ -12,12 +12,12 @@ with open('pokemon_data.json') as poke_data:
         moves = i['moves']
         for m in moves :
             move = m['name']
-            move_list.append('have('+name.lower()+','+move.lower()+').')
+            move_list.append('have_move('+name.lower()+','+move.lower()+').')
         types = i['types']
         for t in types :
             type = t['name']
-            type_list.append('type('+name.lower()+','+type.lower()+').')
-    out = open('pokefactrule.pl','w+')
+            type_list.append('have_type('+name.lower()+','+type.lower()+').')
+    out = open('pokefactrule.pl','w')
     for i in pokemon_list :
         out.write(i+'\n')
     for i in type_list :
