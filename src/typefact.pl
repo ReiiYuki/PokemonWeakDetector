@@ -289,7 +289,7 @@ effective(ice,dark,1).
 effective(ice,fairy,1).
 effective(dragon,steel,0.5).
 effective(dragon,dragon,2).
-effective(dragon,psychic,2).
+effective(dragon,psychic,1).
 effective(dragon,fairy,0).
 effective(dragon,normal,1).
 effective(dragon,fighting,1).
