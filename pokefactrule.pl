@@ -45569,4 +45569,7 @@ have(genesect,blizzard).
 have(genesect,ice-beam).
 have(genesect,flamethrower).
 have(genesect,fly).
-what_is_it(X,Y,Z) :- have(X,Y),type(X,Z).
+
+
+
+two(X,Y,Z) :- type(X,Y),type(X,Z),not(Z=Y).

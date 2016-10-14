@@ -1,6 +1,6 @@
 import requests
 import json
-with open('pokemon_data.json', 'w') as outfile:
+with open('pokemon_data.json', 'w+') as outfile:
     list = []
     for i in range(1,719):
         url ="https://phalt-pokeapi.p.mashape.com/pokemon/"+str(i)+"/"
