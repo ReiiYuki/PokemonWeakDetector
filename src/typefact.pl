@@ -1,3 +1,4 @@
+:- module(typefact,[]).
 type(normal).
 type(fighting).
 type(flying).
