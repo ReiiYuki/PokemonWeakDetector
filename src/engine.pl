@@ -2,6 +2,7 @@
 :- use_module(movefact,[]).
 :- use_module(typefact,[]).
 :- use_module(statfact,[]).
+:- use_module(powerfact,[]).
 :- use_module(pokerule,[]).
 =======
 :- use_module(library(http/http_open)).
