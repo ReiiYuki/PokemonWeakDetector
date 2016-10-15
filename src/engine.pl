@@ -14,10 +14,7 @@
 %     effective_ratio_defense(Attack, Tail, Result2),
 %     Result is Result1 * Result2.
 
-
 % pokefact:have_move(charmander,X),movefact:have_type(X,TYPE),pokefact:have_type(bulbasaur,TYPE_E1),pokefact:have_type(bulbasaur,TYPE_E2),not(TYPE_E1=TYPE_E2),effective_ratio_defense(TYPE,[TYPE_E1,TYPE_E2],R),R>=2.
-
-
 
 % movefact:have_type(dragon-tail,T),pokefact:have_type(abra,T1),effective(T,T1,R),R>=2.
 % pokefact:pokemon(pikachu),
