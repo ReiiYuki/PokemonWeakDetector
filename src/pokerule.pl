@@ -12,17 +12,27 @@ pokerule:same_level(A,B) :- statfact:have_base_stat(A,Stat1),
   statfact:have_base_stat(B,Stat2),
   ((Stat1-Stat2)>=50 ; (Stat1-Stat2)=<50).
 
-pokerule:best_move(P,M1) :-
-  (pokefact:have_move(P,M1)),
-  not(
-    (  pokefact:have_move(P,M2),
-      more_power(M2,M1))
-      ).
+pokerule:best_move(P,M1,T1) :-
+    (pokefact:have_move(P,M1),powerfact:power(M1,D1),movefact:have_type(M1,T1)),
+    not(
+    (pokefact:have_move(P,M2),
+    movefact:have_type(M2,T2),
+    powerfact:power(M2,D2),
+    D2>D1)
+    ),not(T1=T2).
+
+
+  % (pokefact:have_move(P,M1),same_move_type(M1,M2),move(M2)),
+  % not(
+  %   (
+  %   pokefact:have_move(P,M1)
+  %     (move(M2),
+  %     more_power(M2,M1))
+  %     ).
 %
 pokerule:more_power(M1,M2):- powerfact:power(M1,D1),
   powerfact:power(M2,D2),
-  D1>D2,
-  same_move_type(M1,M2).
+  D1>D2.
 
 pokerule:same_move_type(M1,M2):-
   movefact:have_type(M1,T1),movefact:have_type(M2,T2),T1=T2.
