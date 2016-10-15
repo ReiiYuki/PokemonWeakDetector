@@ -2,6 +2,7 @@
 :- use_module(movefact,[]).
 :- use_module(typefact,[]).
 :- use_module(statfact,[]).
+:- use_module(pokerule,[]).
 =======
 :- use_module(library(http/http_open)).
 :- use_module(library(http/json)).
@@ -15,14 +16,6 @@
 
 
 % pokefact:have_move(charmander,X),movefact:have_type(X,TYPE),pokefact:have_type(bulbasaur,TYPE_E1),pokefact:have_type(bulbasaur,TYPE_E2),not(TYPE_E1=TYPE_E2),effective_ratio_defense(TYPE,[TYPE_E1,TYPE_E2],R),R>=2.
-
-beat(P,M,E):-pokefact:pokemon(P),pokefact:have_move(P,M),
-  movefact:move(M),movefact:have_type(M,T),
-  pokefact:have_type(E,T1),
-  typefact:effective(T,T1,R),R>=2,
-  stronger(P,E).
-
-stronger(A,B):-statfact:have_base_stat(A,Stat1),statfact:have_base_stat(B,Stat2),(Stat1-Stat2)>=50.
 
 
 
