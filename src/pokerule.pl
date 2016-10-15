@@ -34,3 +34,12 @@ pokerule:more_power(D,P) :-
 % pokerule:max_power(Max,P) :-
 %   pokefact:pokemon(P),pokefact:have_move(P,M),powerfact:power(M,D),
 %   accMax(D,0,Max).
+
+% pokerule:stronger(A,B):-statfact:have_base_stat(A,Stat1),statfact:have_base_stat(B,Stat2),not(A=B),((Stat1-Stat2)>=50);(Stat2-Stat1)).
+
+resistance(A,B):-pokefact:pokemon(A),
+  pokefact:have_type(A,T1),
+  pokefact:pokemon(B),
+  pokefact:have_type(B,T2),
+  typefact:effective(T2,T1,R),
+  R = 0.5.
