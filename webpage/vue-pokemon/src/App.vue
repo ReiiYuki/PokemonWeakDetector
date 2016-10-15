@@ -1,7 +1,9 @@
 <template>
-  <div id="app">
+  <div id="app" class="text-center">
     <img src="./assets/logo.png">
     <h1>{{ msg }}</h1>
+    <Enemy></Enemy>
+    <Enemy></Enemy>
     <Enemy></Enemy>
   </div>
 </template>
