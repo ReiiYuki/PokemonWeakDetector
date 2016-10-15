@@ -21,7 +21,7 @@ beat(P,M,E):-pokefact:pokemon(P),pokefact:have_move(P,M),
   pokefact:have_type(E,T1),
   typefact:effective(T,T1,R),R>=2.
 
-stronger(A,B):-statfact:have_base_stat(A,Stat1),statfact:have_base_stat(B,Stat2),Stat1>Stat2.
+stronger(A,B):-statfact:have_base_stat(A,Stat1),statfact:have_base_stat(B,Stat2),abs(Stat1-Stat2)>=50.
 
 
 
