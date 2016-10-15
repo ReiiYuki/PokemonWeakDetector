@@ -12,9 +12,9 @@ server(Port) :-
    http_server(http_dispatch,[port(Port)]).
 
 handle(Request) :-
-   format(user_output,"I'm here~n",[]),
-   http_read_json(Request, DictIn,[json_object(term)]),
-   format(user_output,"Request is: ~p~n",[Request]),
-   format(user_output,"DictIn is: ~p~n",[DictIn]),
+   http_read_json_dict(Request, DictIn,[json_object(term)]),
+   % pokerule:beat(P,M,DictIn.pokemon),
+   % format(user_output,"Pokemon is: ~p~n",[P]),
+   % format(user_output,"Move is: ~p~n",[M]),
    DictOut=DictIn,
    reply_json(DictOut).

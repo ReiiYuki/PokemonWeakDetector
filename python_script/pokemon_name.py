@@ -6,8 +6,8 @@ out = open('pokemon_name.json',"w")
 LIST = []
 count = 1
 for row in reader:
-    name = {"id_img":str(count)+".png",
-        "name":row["name"]}
+    name = {"value":str(count)+".png",
+        "text":row["name"].lower()}
     count+=1
     LIST.append(name)
     print(name)
