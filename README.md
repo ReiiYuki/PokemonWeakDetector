@@ -1,4 +1,4 @@
-# PokemonWeakDetector
+# Pokemon Weak Detector
 
 Web Application to find pokemon that can beat your or your opponent's pokemon.
 
