@@ -4,9 +4,7 @@
 :- use_module(statfact,[]).
 :- use_module(powerfact,[]).
 :- use_module(pokerule,[]).
-=======
-:- use_module(library(http/http_open)).
-:- use_module(library(http/json)).
+:- use_module(server,[]).
 %
 % effective_ratio_defense(_, [], 1.0).
 % effective_ratio_defense(Attack, [Defense | Tail], Result) :-
