@@ -1,4 +1,5 @@
 % test server.
+% ref : http://stackoverflow.com/questions/34242458/prolog-receiving-json-post
 :- use_module(library(http/thread_httpd)).
 :- use_module(library(http/http_dispatch)).
 
