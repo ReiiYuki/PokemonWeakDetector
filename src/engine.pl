@@ -5,6 +5,12 @@
 :- use_module(powerfact,[]).
 :- use_module(pokerule,[]).
 :- use_module(server,[]).
+
+:- initialization main.
+main:-
+	write('Start Server'),
+	server:server(9999).
+
 %
 % effective_ratio_defense(_, [], 1.0).
 % effective_ratio_defense(Attack, [Defense | Tail], Result) :-
