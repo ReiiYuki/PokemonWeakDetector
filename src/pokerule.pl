@@ -18,8 +18,9 @@ pokerule:best_move(P,M1,T1) :-
     (pokefact:have_move(P,M2),
     movefact:have_type(M2,T2),
     powerfact:power(M2,D2),
+    T1=T2,
     D2>D1)
-    ),not(T1=T2).
+    ).
 
 
   % (pokefact:have_move(P,M1),same_move_type(M1,M2),move(M2)),
