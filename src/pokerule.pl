@@ -44,6 +44,9 @@ pokerule:more_power(M1,M2):-
   powerfact:power(M2,D2),
   D1>D2.
 
+pokerule:attack_move(M):-
+  powerfact:power(M,D),
+  not(D=0).
 
 %  Move M1 same move type M2  if have Move M1 have Type T1  and Move M2 have Type T2 and Type T1 = Type T2.
 pokerule:same_move_type(M1,M2):-
