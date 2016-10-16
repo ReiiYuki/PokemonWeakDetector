@@ -3,12 +3,12 @@
     <img v-bind:src= "'src/assets/pokemon_sprites/'+item.value" />
     <div class="select_name_div">
       <basic-select :options="pokemon_name"
-                  :selected-option="item"
-                  @select="onSelect" v-bind:style="select_name_style">
-      </basic-select>
-    </div>
-
+      :selected-option="item"
+      @select="onSelect" v-bind:style="select_name_style">
+    </basic-select>
   </div>
+  <button type="button" @click="onSubmit" name="button">confirm</button>
+</div>
 </template>
 
 <script>
@@ -16,8 +16,8 @@
 import { vSelect } from "vue-select"
 import { BasicSelect } from 'vue-search-select'
 var url = 'src/assets/pokemon_sprites/'
+const END_POINT = 'http://localhost:9999/'
 export default {
-
   components: {vSelect,BasicSelect},
   created: function () {
     var self = this;
@@ -35,8 +35,8 @@ export default {
       pokemon_name:[],
       searchText: '', // If value is falsy, reset searchText & searchItem
       item: {
-            value: '1.png',
-            text: 'bulbasaur'
+        value: '1.png',
+        text: 'bulbasaur'
       },
       select_name_style: {
         fontSize: '15px',
@@ -47,21 +47,39 @@ export default {
   },
 
   methods: {
-      onSelect (item) {
-        this.item = item
-      },
-      reset () {
-        this.item = {}
-      },
-      selectOption () {
-        this.item = this.pokemon_name[0]
-      }
+    onSelect (item) {
+      this.item = item
     },
+    reset () {
+      this.item = {}
+    },
+    selectOption () {
+      this.item = this.pokemon_name[0]
+    },
+    onSubmit(){
+      let enemyName = this.item.text
+      let data = {"pokemon":enemyName}
+      $.ajax({
+        url        : END_POINT,
+        method     : 'post',
+        contentType: 'application/json',
+        dataType   : 'json',
+        data       : JSON.stringify(data),
+        success    : function (res) {
+          console.log(res);
+        },
+        error :function (res) {
+          console.log(res);
+        }
+      })
+
+    }
+  },
 }
 </script>
-<style media="screen" scoped>
-  .select_name_div {
-    display: inline-block;
-    text-transform: capitalize;
-  }
+<style scoped>
+.select_name_div {
+  display: inline-block;
+  text-transform: capitalize;
+}
 </style>
