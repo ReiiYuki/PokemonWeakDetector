@@ -1,32 +1,27 @@
 :- module(pokerule, []).
 
-% Pokemon P have move M beat Pokemon Enemey E if Pokemon P have Move M ,Move M have Type
+% Pokemon P have the best move M beat Pokemon Enemey E if Pokemon P have Move M ,Move M have Type
 % T1 and Pokemon Enemey E have Type T2 and T1 effective T2 with R >= 2.
 pokerule:beat(P,M,E):-
   pokefact:pokemon(P),
-  pokefact:have_move(P,M),
-  movefact:move(M),
+  best_move(P,M),
   movefact:have_type(M,T1),
   pokefact:have_type(E,T2),
   typefact:effective(T1,T2,R),
   R>=2,
   stronger(P,E).
 
-% pokemon A storger than pokemon B  if A have same_level with B and A resistance of B.
+% pokemon A storger than pokemon B  if A have can fight with B and A resistance of B.
 pokerule:stronger(A,B):-
-  same_level(A,B),
+  can_fight(A,B),
   resistance(A,B).
 
-% pokemon A same_level with B if A and B have base status difference in range 50.
-pokerule:same_level(A,B) :-
+% pokemon A can fight pokemon B if base status of pokemon B have base status lower or equal A 50.
+pokerule:can_fight(A,B) :-
   statfact:have_base_stat(A,Stat1),
   statfact:have_base_stat(B,Stat2),
-  ((Stat2 >= Stat1-25),(Stat2 =< Stat1 + 25 )).
+  ((Stat2 =< Stat1 + 50 )).
 
-% pokerule:high_level(A,B):-
-%   statfact:have_base_stat(A,Stat1),
-%   statfact:have_base_stat(B,Stat2),
-%   Stat1>Stat2.
 
 % pokemon P have best move if pokemon P have Move M1 that not have other move and type more power than M1.
 pokerule:best_move(P,M1) :-
