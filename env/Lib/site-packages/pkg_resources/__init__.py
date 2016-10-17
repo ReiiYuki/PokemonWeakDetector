@@ -1398,7 +1398,7 @@ def safe_extra(extra):
     Any runs of non-alphanumeric characters are replaced with a single '_',
     and the result is always lowercased.
     """
-    return re.sub('[^A-Za-z0-9.]+', '_', extra).lower()
+    return re.sub('[^A-Za-z0-9.-]+', '_', extra).lower()
 
 
 def to_filename(name):
@@ -1983,12 +1983,20 @@ def find_on_path(importer, path_item, only=False):
             )
         else:
             # scan for .egg and .egg-info in directory
-            for entry in os.listdir(path_item):
+
+            path_item_entries = os.listdir(path_item)
+            # Reverse so we find the newest version of a distribution,
+            path_item_entries.sort()
+            path_item_entries.reverse()
+            for entry in path_item_entries:
                 lower = entry.lower()
                 if lower.endswith('.egg-info') or lower.endswith('.dist-info'):
                     fullpath = os.path.join(path_item, entry)
                     if os.path.isdir(fullpath):
                         # egg-info directory, allow getting metadata
+                        if len(os.listdir(fullpath)) == 0:
+                            # Empty egg directory, skip.
+                            continue
                         metadata = PathMetadata(path_item, fullpath)
                     else:
                         metadata = FileMetadata(fullpath)
@@ -2790,8 +2798,8 @@ class DistInfoDistribution(Distribution):
         dm[None].extend(common)
 
         for extra in self._parsed_pkg_info.get_all('Provides-Extra') or []:
-            extra = safe_extra(extra.strip())
-            dm[extra] = list(frozenset(reqs_for_extra(extra)) - common)
+            s_extra = safe_extra(extra.strip())
+            dm[s_extra] = list(frozenset(reqs_for_extra(extra)) - common)
 
         return dm
 
