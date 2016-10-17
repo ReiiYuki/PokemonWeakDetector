@@ -1,13 +1,13 @@
 <template>
-  <div>
+  <div class="pokemon_select">
     <img v-bind:src= "'src/assets/pokemon_sprites/'+item.value" />
     <div class="select_name_div">
       <basic-select :options="pokemon_name"
       :selected-option="item"
       @select="onSelect" v-bind:style="select_name_style">
     </basic-select>
-  </div>
-  <button type="button" @click="onSubmit" name="button">confirm</button>
+  </div>&nbsp;&nbsp;&nbsp;&nbsp;
+  <button class="btn btn-primary" type="button" @click="onSubmit" name="button">Go</button>
 </div>
 </template>
 
@@ -26,7 +26,7 @@ export default {
       url:'../../api/pokemon_name.json',
       complete:function(data){
         self.pokemon_name = data.responseJSON
-        this.pokemonMapImage = new PokemonMapImage(self.pokemon_name)
+
       }
     })
   },
@@ -61,21 +61,48 @@ export default {
     },
     onSubmit(){
       let enemyName = this.item.text
+      console.log(enemyName)
       let data = {"pokemon":enemyName}
+      var self = this
+      var pokemonMapImage = new PokemonMapImage(self.pokemon_name)
       $.ajax({
         url        : END_POINT,
-        method     : 'post',
+        method     : 'POST',
         contentType: 'application/json',
         dataType   : 'json',
         data       : JSON.stringify(data),
         success    : function (res) {
-          console.log(res);
+          let list_pokemon = res
+          let set_pokemon = new Set();
+          let keylist=[]
+          let list_obj = []
+          let map = new Map();
+          let data_table = [];
+          for(let i in list_pokemon){
+            if(map.get(list_pokemon[i].Pokemon)){
+              let key = list_pokemon[i].Pokemon
+              map.get(key).add(list_pokemon[i].Move)
+            }
+            else{
+              let moveList = new Set();
+              moveList.add(list_pokemon[i].Move)
+              map.set(list_pokemon[i].Pokemon,moveList)
+            }
+          }
+          for (var [key, value] of map.entries()) {
+            value.forEach(function(move) {
+              console.log(key,move)
+               data_table.push({"pokemon_name":key,"move":move,"url":url+''+pokemonMapImage.convert(key)})
+            });
+          }
+          for(var i in data_table){
+            console.log(data_table[i]);
+          }
         },
         error :function (res) {
-          console.log(res);
+          console.log(res,'e');
         }
       })
-
     }
   },
 }
