@@ -1,7 +1,6 @@
 <template>
-  <div id="app" class="text-center">
+  <div id="app" class="app_container">
     <img src="./assets/logo.png">
-    <h1>{{ msg }}</h1>
     <Enemy></Enemy>
   </div>
 </template>
@@ -25,5 +24,8 @@ export default {
 <style>
 body {
   font-family: Helvetica, sans-serif;
+}
+.app_container {
+  display: inline-flex;
 }
 </style>

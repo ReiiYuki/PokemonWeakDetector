@@ -6,8 +6,8 @@
       :selected-option="item"
       @select="onSelect" v-bind:style="select_name_style">
     </basic-select>
-  </div>
-  <button type="button" @click="onSubmit" name="button">confirm</button>
+  </div>&nbsp;&nbsp;&nbsp;&nbsp;  
+  <button class="btn btn-primary" type="button" @click="onSubmit" name="button">Go</button>
 </div>
 </template>
 
@@ -58,18 +58,38 @@ export default {
     },
     onSubmit(){
       let enemyName = this.item.text
+      console.log(enemyName)
       let data = {"pokemon":enemyName}
       $.ajax({
         url        : END_POINT,
-        method     : 'post',
+        method     : 'POST',
         contentType: 'application/json',
         dataType   : 'json',
         data       : JSON.stringify(data),
         success    : function (res) {
-          console.log(res);
+          let list_pokemon = res
+          let set_pokemon = new Set();
+          let keylist=[]
+          let list_obj = []
+          let map = new Map();
+          for(let i in list_pokemon){
+            if(map.get(list_pokemon[i].Pokemon)){
+              let key = list_pokemon[i].Pokemon
+              map.get(key).add(list_pokemon[i].Move)
+            }
+            else{
+              let moveList = new Set();
+              moveList.add(list_pokemon[i].Move)
+            map.set(list_pokemon[i].Pokemon,moveList)
+            }
+          }
+          for (var [key, value] of map.entries()) {
+            console.log(key,value)
+          }
+
         },
         error :function (res) {
-          console.log(res);
+          console.log(res,'e');
         }
       })
 
