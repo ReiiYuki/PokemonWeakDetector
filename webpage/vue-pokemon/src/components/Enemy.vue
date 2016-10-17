@@ -15,6 +15,7 @@
 
 import { vSelect } from "vue-select"
 import { BasicSelect } from 'vue-search-select'
+import PokemonMapImage from '../util/PokemonMapImage'
 var url = 'src/assets/pokemon_sprites/'
 const END_POINT = 'http://localhost:9999/'
 export default {
@@ -25,6 +26,7 @@ export default {
       url:'../../api/pokemon_name.json',
       complete:function(data){
         self.pokemon_name = data.responseJSON
+        this.pokemonMapImage = new PokemonMapImage(self.pokemon_name)
       }
     })
   },
@@ -38,6 +40,7 @@ export default {
         value: '1.png',
         text: 'bulbasaur'
       },
+      pokemonMapImage:{},
       select_name_style: {
         fontSize: '15px',
         width: '200px',
