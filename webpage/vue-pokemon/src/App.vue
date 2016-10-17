@@ -4,11 +4,14 @@
     </div>
     <div style="position: fixed; z-index: -99; width: 100%; opacity: .25; height: 100%">
   <iframe frameborder="0" height="100%" width="100%"
-    src="https://youtube.com/embed/lrHJhKEtQEI?autoplay=1&controls=0&showinfo=0&autohide=1">
+    src="https://youtube.com/embed/d3YI3NYywg0?autoplay=1&controls=0&showinfo=0&autohide=1">
+    <!-- 6xKWiCMKKJg -->
+    <!-- d3YI3NYywg0 list -->
+    <!-- Nmipdds2PzI -->
   </iframe>
 </div>
     <img src="./assets/logo.png">
-    <h1>{{ msg }}</h1>
+    <h1 class="enemy-text">{{ msg }}</h1>
     <Enemy></Enemy>
   </div>
 </template>
@@ -32,5 +35,10 @@ export default {
 <style>
 body {
   font-family: Helvetica, sans-serif;
+}
+.enemy-text{
+  font-size:4em;
+  color: rgb(247, 198, 51);
+  text-shadow: 2px 2px 0 rgb(25, 83, 150), 2px -2px 0 rgb(25, 83, 150), -2px 2px 0 rgb(25, 83, 150), -2px -2px 0 rgb(25, 83, 150);
 }
 </style>
