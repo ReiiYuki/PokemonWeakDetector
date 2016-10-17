@@ -112,7 +112,7 @@
         "value": "28.png"
     },
     {
-        "text": "nidoran-f",
+        "text": "nidoran_f",
         "value": "29.png"
     },
     {
@@ -124,7 +124,7 @@
         "value": "31.png"
     },
     {
-        "text": "nidoran-m",
+        "text": "nidoran_m",
         "value": "32.png"
     },
     {
@@ -484,7 +484,7 @@
         "value": "121.png"
     },
     {
-        "text": "mr-mime",
+        "text": "mr_mime",
         "value": "122.png"
     },
     {
@@ -996,7 +996,7 @@
         "value": "249.png"
     },
     {
-        "text": "ho-oh",
+        "text": "ho_oh",
         "value": "250.png"
     },
     {
@@ -1540,7 +1540,7 @@
         "value": "385.png"
     },
     {
-        "text": "deoxys-normal",
+        "text": "deoxys_normal",
         "value": "386.png"
     },
     {
@@ -1648,7 +1648,7 @@
         "value": "412.png"
     },
     {
-        "text": "wormadam-plant",
+        "text": "wormadam_plant",
         "value": "413.png"
     },
     {
@@ -1752,7 +1752,7 @@
         "value": "438.png"
     },
     {
-        "text": "mime-jr",
+        "text": "mime_jr",
         "value": "439.png"
     },
     {
@@ -1892,7 +1892,7 @@
         "value": "473.png"
     },
     {
-        "text": "porygon-z",
+        "text": "porygon_z",
         "value": "474.png"
     },
     {
@@ -1944,7 +1944,7 @@
         "value": "486.png"
     },
     {
-        "text": "giratina-altered",
+        "text": "giratina_altered",
         "value": "487.png"
     },
     {
@@ -1964,7 +1964,7 @@
         "value": "491.png"
     },
     {
-        "text": "shaymin-land",
+        "text": "shaymin_land",
         "value": "492.png"
     },
     {
@@ -2196,7 +2196,7 @@
         "value": "549.png"
     },
     {
-        "text": "basculin-red-striped",
+        "text": "basculin_red_striped",
         "value": "550.png"
     },
     {
@@ -2216,7 +2216,7 @@
         "value": "554.png"
     },
     {
-        "text": "darmanitan-standard",
+        "text": "darmanitan_standard",
         "value": "555.png"
     },
     {
@@ -2560,11 +2560,11 @@
         "value": "640.png"
     },
     {
-        "text": "tornadus-incarnate",
+        "text": "tornadus_incarnate",
         "value": "641.png"
     },
     {
-        "text": "thundurus-incarnate",
+        "text": "thundurus_incarnate",
         "value": "642.png"
     },
     {
@@ -2576,7 +2576,7 @@
         "value": "644.png"
     },
     {
-        "text": "landorus-incarnate",
+        "text": "landorus_incarnate",
         "value": "645.png"
     },
     {
@@ -2584,11 +2584,11 @@
         "value": "646.png"
     },
     {
-        "text": "keldeo-ordinary",
+        "text": "keldeo_ordinary",
         "value": "647.png"
     },
     {
-        "text": "meloetta-aria",
+        "text": "meloetta_aria",
         "value": "648.png"
     },
     {
@@ -2708,7 +2708,7 @@
         "value": "677.png"
     },
     {
-        "text": "meowstic-male",
+        "text": "meowstic_male",
         "value": "678.png"
     },
     {
@@ -2836,11 +2836,11 @@
         "value": "709.png"
     },
     {
-        "text": "pumpkaboo-average",
+        "text": "pumpkaboo_average",
         "value": "710.png"
     },
     {
-        "text": "gourgeist-average",
+        "text": "gourgeist_average",
         "value": "711.png"
     },
     {

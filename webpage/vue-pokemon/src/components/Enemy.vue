@@ -26,7 +26,7 @@ export default {
       url:'../../api/pokemon_name.json',
       complete:function(data){
         self.pokemon_name = data.responseJSON
-        this.pokemonMapImage = new PokemonMapImage(self.pokemon_name)
+
       }
     })
   },
@@ -63,6 +63,8 @@ export default {
       let enemyName = this.item.text
       console.log(enemyName)
       let data = {"pokemon":enemyName}
+      var self = this
+      var pokemonMapImage = new PokemonMapImage(self.pokemon_name)
       $.ajax({
         url        : END_POINT,
         method     : 'POST',
@@ -75,6 +77,7 @@ export default {
           let keylist=[]
           let list_obj = []
           let map = new Map();
+          let data_table = [];
           for(let i in list_pokemon){
             if(map.get(list_pokemon[i].Pokemon)){
               let key = list_pokemon[i].Pokemon
@@ -83,19 +86,23 @@ export default {
             else{
               let moveList = new Set();
               moveList.add(list_pokemon[i].Move)
-            map.set(list_pokemon[i].Pokemon,moveList)
+              map.set(list_pokemon[i].Pokemon,moveList)
             }
           }
           for (var [key, value] of map.entries()) {
-            console.log(key,value)
+            value.forEach(function(move) {
+              console.log(key,move)
+               data_table.push({"pokemon_name":key,"move":move,"url":url+''+pokemonMapImage.convert(key)})
+            });
           }
-
+          for(var i in data_table){
+            console.log(data_table[i]);
+          }
         },
         error :function (res) {
           console.log(res,'e');
         }
       })
-
     }
   },
 }
