@@ -101,7 +101,7 @@ effective(ground,normal,1).
 effective(ground,fighting,1).
 effective(ground,ghost,1).
 effective(ground,water,1).
-effective(ground,grass,1).
+effective(ground,grass,0.5).
 effective(ground,psychic,1).
 effective(ground,ice,1).
 effective(ground,dragon,1).
