@@ -1,12 +1,12 @@
 <template>
-  <div>
+  <div class="pokemon_select">
     <img v-bind:src= "'src/assets/pokemon_sprites/'+item.value" />
     <div class="select_name_div">
       <basic-select :options="pokemon_name"
       :selected-option="item"
       @select="onSelect" v-bind:style="select_name_style">
     </basic-select>
-  </div>&nbsp;&nbsp;&nbsp;&nbsp;  
+  </div>&nbsp;&nbsp;&nbsp;&nbsp;
   <button class="btn btn-primary" type="button" @click="onSubmit" name="button">Go</button>
 </div>
 </template>
