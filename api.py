@@ -23,6 +23,7 @@ def get_result():
          temp["Moves"].append(i['Move'])
       else :
          temp["Moves"].append(i['Move'])
+   temp['Moves'] = list(set(temp['Moves']))
    poke_list.append(temp)
    return jsonify(poke_list[1:len(poke_list)])
 
