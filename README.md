@@ -2,6 +2,14 @@
 
 Web Application to find pokemon that can beat your or your opponent's pokemon.
 
+##Requirement
+
+- Python 2+ Not 3
+- SWI-Prolog
+- pyswip
+- flask
+- Flask-Cors
+
 ##Structure
 1. Knowledge Base
 
