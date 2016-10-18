@@ -166,6 +166,6 @@ th, td {
   text-align: center;
 }
 #header-fixed {
-    top: 0px;
+    top: 0;
 }
 </style>
