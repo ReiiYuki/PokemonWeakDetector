@@ -1,10 +1,10 @@
 <template>
   <div id="app" class="text-center">
-    <div style="position: fixed; z-index: -98; width: 100%; opacity: .25; height: 100%; background-color:rgba(255, 255, 255,0)">
+    <div style="position: fixed; z-index: -98; width: 100%; height: 100%; background-color:rgba(255, 255, 255,0)">
     </div>
-    <div style="position: fixed; z-index: -99; width: 100%; opacity: .25; height: 100%">
+    <div style="position: fixed; z-index: -99; width: 100%; opacity: .3; height: 100%; background-color:rgba(255, 255, 255,0)">
   <iframe frameborder="0" height="100%" width="100%"
-    src="https://youtube.com/embed/Nmipdds2PzI?autoplay=1&controls=0&showinfo=0&autohide=1&loop=1">
+    src="https://youtube.com/embed/d3YI3NYywg0?autoplay=1&controls=0&showinfo=0&autohide=1&loop=1">
     <!-- 6xKWiCMKKJg -->
     <!-- d3YI3NYywg0 list -->
     <!-- Nmipdds2PzI -->
@@ -36,8 +36,12 @@ export default {
 body {
   font-family: Helvetica, sans-serif;
 }
+.app_container {
+  display: inline-flex;
+}
+
 .enemy-text{
-  font-size:4em;
+  font-size:2em;
   color: rgb(247, 198, 51);
   text-shadow: 2px 2px 0 rgb(25, 83, 150), 2px -2px 0 rgb(25, 83, 150), -2px 2px 0 rgb(25, 83, 150), -2px -2px 0 rgb(25, 83, 150);
 }
