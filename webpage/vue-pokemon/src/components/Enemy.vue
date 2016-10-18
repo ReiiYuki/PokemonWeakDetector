@@ -7,7 +7,7 @@
       @select="onSelect" v-bind:style="select_name_style">
     </basic-select>
   </div>&nbsp;&nbsp;&nbsp;&nbsp;
-  <button class="btn btn-primary" type="button" @click="onSubmit" name="button">Go</button>
+  <button class="btn btn-primary" type="button" @click="onSubmit" name="button">Detect!</button>
   <br>
   <div class="table_container">
     <table cellspacing="1" cellpadding="1" border="1">
@@ -147,10 +147,13 @@ th {
   background-color: #4682B4;
   color: rgba(255,215,0,1);
   text-align: center;
+  font-size: 17px;
 }
 
 td {
   background-color: #F5FFFA;
+  text-transform:capitalize;
+  font-size: 15px;
 }
 
 th, td {
@@ -159,9 +162,8 @@ th, td {
 }
 
 tbody{
-  overflow-y: auto;
-  height: 19vw;
-  width: 102%;
+  height: 18.8vw;
+  width: 100%;
 }
 thead,tbody{
   display: block;
@@ -174,7 +176,7 @@ thead,tbody{
 }
 
 .table-body{
-  overflow:scroll;
+  overflow:auto;
   background-color: #F5FFFA;
 }
 
