@@ -7,7 +7,7 @@
       @select="onSelect" v-bind:style="select_name_style">
     </basic-select>
   </div>&nbsp;&nbsp;&nbsp;&nbsp;
-  <button class="btn btn-primary" type="button" @click="onSubmit" name="button">Go</button>
+  <button class="btn btn-primary" type="button" @click="onSubmit" name="button">Detect!</button>
   <br>
   <div class="table_container">
     <table cellspacing="1" cellpadding="1" border="1">
@@ -167,7 +167,7 @@ th, td {
 }
 .table-body{
   height:300px;
-  overflow:scroll;    
+  overflow:scroll;
 }
 
 </style>
