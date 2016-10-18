@@ -10,7 +10,7 @@
   <button class="btn btn-primary" type="button" @click="onSubmit" name="button">Go</button>
   <br>
   <div class="table_container">
-    <table id="header-fixed" cellspacing="1" cellpadding="1" border="1">
+    <table cellspacing="1" cellpadding="1" border="1">
       <thead>
         <tr>
           <th v-for="key in columns">
@@ -18,7 +18,7 @@
           </th>
         </tr>
       </thead>
-      <tbody>
+      <tbody class = "table-body">
         <tr v-for="entry in data">
           <td v-for="key in columns">
             <div v-if="key == 'Pokemon'">
@@ -165,7 +165,9 @@ th, td {
   display: inline-block;
   text-align: center;
 }
-#header-fixed {
-    top: 0px;
+.table-body{
+  height:300px;
+  overflow:scroll;    
 }
+
 </style>
