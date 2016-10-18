@@ -10,7 +10,7 @@
   <button class="btn btn-primary" type="button" @click="onSubmit" name="button">Go</button>
   <br>
   <div class="table_container">
-    <table id="header-fixed" cellspacing="1" cellpadding="1" border="1">
+    <table cellspacing="1" cellpadding="1" border="1">
       <thead>
         <tr>
           <th v-for="key in columns">
@@ -18,7 +18,7 @@
           </th>
         </tr>
       </thead>
-      <tbody>
+      <tbody class = "table-body">
         <tr v-for="entry in data">
           <td v-for="key in columns">
             <div v-if="key == 'Pokemon'">
@@ -72,7 +72,7 @@ export default {
       },
       gridColumns: [],
       gridData: [],
-      data : [{Pokemon:'',Name:'None',Moves:'None'}],
+      data : [{Pokemon:'None',Name:'None',Moves:'None'}],
       searchQuery: '',
     }
   },
@@ -122,7 +122,7 @@ export default {
         },
         error :function (res) {
           console.log(res,'e');
-          self.data = [{Pokemon:'',Name:'None',Move:'None'}]
+          self.data = [{Pokemon:'None',Name:'None',Move:'None'}]
         }
       })
     }
@@ -158,14 +158,24 @@ th, td {
   padding: 10px 20px;
 }
 
+tbody{
+  overflow-y: auto;
+  height: 19vw;
+  width: 102%;
+}
+thead,tbody{
+  display: block;
+}
+
 .table_container {
   width: 70vw;
-  height: 22vw;
-  overflow:auto;
   display: inline-block;
   text-align: center;
 }
-#header-fixed {
-    top: 0;
+
+.table-body{
+  overflow:scroll;
+  background-color: #F5FFFA;
 }
+
 </style>
