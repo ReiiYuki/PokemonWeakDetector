@@ -154,13 +154,13 @@ td {
 }
 
 th, td {
-  width: 900px;
+  width: 70vw;
   padding: 10px 20px;
 }
 
 .table_container {
-  width: 900px;
-  height: 300px;
+  width: 70vw;
+  height: 22vw;
   overflow:auto;
   display: inline-block;
   text-align: center;
