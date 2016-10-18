@@ -10,7 +10,7 @@
   <button class="btn btn-primary" type="button" @click="onSubmit" name="button">Go</button>
   <br>
   <div class="table_container">
-    <table cellspacing="1" cellpadding="1" border="1">
+    <table id="header-fixed" cellspacing="1" cellpadding="1" border="1">
       <thead>
         <tr>
           <th v-for="key in columns">
@@ -165,5 +165,7 @@ th, td {
   display: inline-block;
   text-align: center;
 }
-
+#header-fixed {
+    top: 0px;
+}
 </style>
