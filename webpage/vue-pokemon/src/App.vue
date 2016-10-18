@@ -14,7 +14,6 @@
 <script>
 
 import Enemy from './components/Enemy.vue'
-
 export default {
   components:{
     Enemy: Enemy
