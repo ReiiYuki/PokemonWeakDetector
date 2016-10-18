@@ -20,7 +20,7 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel',
-         exclude: /node_modules|vue\/src|vue-router\/|vue-loader\/|vue-hot-reload-api\//,
+        exclude: /node_modules|vue\/src|vue-router\/|vue-loader\/|vue-hot-reload-api\//,
       },
       {
         test: /\.(png|jpg|gif|svg)$/,
