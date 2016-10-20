@@ -56,7 +56,7 @@ export default {
   },
 
   data(){
-    this.columns = ['Pokemon',' Names ',' Moves ']
+    this.columns = ['Pokemon','Name','Moves']
     return {
       pokemon_name:[],
       searchText: '', // If value is falsy, reset searchText & searchItem
