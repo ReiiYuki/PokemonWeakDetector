@@ -5,17 +5,31 @@
 pokerule:beat(P,M,E):-
   pokefact:pokemon(P),
   best_move(P,M),
+  pokefact:have_type(P,T),
   movefact:have_type(M,T1),
   pokefact:have_type(E,T2),
   pokefact:have_type(E,T4),
-  pokefact:have_type(P,T3),
-  (effective_ratio(T1,[T2,T4],R),not(T2=T4)),
-  R>=2,can_fight(P,E),resistance(T3,T2).
+  (effective_ratio(T1,[T2,T4],R),R>=2),
+  resistance(T,T2),
+  can_fight(P,E).
 
+% usethis
+% findAll([P,M],beat(P,M,pikachu),[_|Z]),list_to_set(Z,SET),write(SET).
+pokerule:beat_set(E,SET):-
+  findall([P,M],beat(P,M,E),[_|Z]),list_to_set(Z,SET).
+% findAll(P,beat(P,M,bulbasaur),Z).
 % % pokemon A storger than pokemon B  if A have can fight with B and A resistance of B.
 % pokerule:stronger(A,B):-
 %   can_fight(A,B),
 %   resistance(A,B).
+
+
+% findAll([P,M],beat(P,M,bulbasaur),[_|Z]),list_to_set(Z,SET),write(SET).
+
+% ,findAll(M,beat(P,M,bulbasaur),
+% Z2),list_to_set(Z,SET),
+% list_to_set(Z2,SET2).
+
 
 % pokemon A can fight pokemon B if base status of pokemon B have base status lower or equal A 50.
 pokerule:can_fight(A,B) :-
@@ -58,14 +72,14 @@ pokerule:same_move_type(M1,M2):-
 
 % ppokemon A resistance pokemon B if pokemon A have type T1 ,pokemon B have type T2 and T2 effective T1 with ratio <= 0.5
 pokerule:resistance(T1,T2):-
-  typefact:effective(T2,T1,R),
-  R =< 1.
-  effective_ratio(_, [], 1.0).
-  effective_ratio(Attack, [Defense | Defense2], Ratio) :-
-  not(Defense = Defense2),
-  typefact:effective(Attack, Defense, Ratio1),
-  effective_ratio(Attack, Defense2, Ratio2),
-  Ratio is Ratio1 * Ratio2.
+  typefact:effective(T2,T1,R),R =< 0.5.
+
+effective_ratio(_, [], 1.0).
+effective_ratio(Attack, [Defense | Defense2], Ratio) :-
+not(Defense = Defense2),
+typefact:effective(Attack, Defense, Ratio1),
+effective_ratio(Attack, Defense2, Ratio2),
+Ratio is Ratio1 * Ratio2.
 
 % :- module(pokerule, []).
 %

@@ -56,7 +56,7 @@ export default {
   },
 
   data(){
-    this.columns = ['Pokemon','Name','Moves']
+    this.columns = ['Pokemon',' Names ',' Moves ']
     return {
       pokemon_name:[],
       searchText: '', // If value is falsy, reset searchText & searchItem
@@ -173,6 +173,7 @@ thead,tbody{
   width: 70vw;
   display: inline-block;
   text-align: center;
+  opacity: .85;
 }
 
 .table-body{
