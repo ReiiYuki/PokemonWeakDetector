@@ -4,7 +4,6 @@
 :- use_module(statfact,[]).
 :- use_module(powerfact,[]).
 :- use_module(pokerule,[]).
-:- use_module(server,[]).
 
 % :- initialization main.
 % main:-
