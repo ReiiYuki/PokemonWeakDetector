@@ -23,7 +23,7 @@ handle(Request) :-
    http_read_json_dict(Request, DictIn,[json_object(term)]),
    format(user_output,"I'm here~n",[]),
    term_string(Pokemon,DictIn.pokemon),
-   findall(poke(P,M),beat(P,M,Pokemon),L),
+   poke(P,M),beat(P,M,Pokemon),L),
    prolog_to_json(L,J),
    format(user_output,"Pokemons are: ~p~n",[J]),
    DictOut=J,
