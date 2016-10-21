@@ -11,7 +11,7 @@ pokerule:beat(P,M,E):-
   pokefact:have_type(E,T2),
   pokefact:have_type(E,T4),
   (effective_ratio(T1,[T2,T4],R),R>=2),
-  resistance(T,T2),
+  (resistance(T,T2);resistance(T,T4)),
   can_fight(P,E).
 
 % beat_set is set of beat(P,M,E)
